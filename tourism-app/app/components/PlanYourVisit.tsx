@@ -25,7 +25,7 @@ const interests: Interest[] = [
   { name: "Rest & Chill", icon: "😌" },
 ];
 
-export default function PlanYourVisit(): JSX.Element {
+export default function PlanYourVisit(): React.ReactElement {
   const [selectedDays, setSelectedDays] = useState<string>("");
   const [selectedTime, setSelectedTime] = useState<string>("");
   const [selectedCities, setSelectedCities] = useState<string[]>([]);
