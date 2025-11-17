@@ -46,7 +46,7 @@ export default function Banner(): React.ReactElement {
           </div>
 
           {/* RIGHT */}
-          <div className="p-[25px] rounded-[35px] overflow-hidden">
+          {/* <div className="p-[25px] rounded-[35px] overflow-hidden">
   <Image
     src="/assets/bannerImage.png"
     alt="Tourism App Mockup"
@@ -54,7 +54,23 @@ export default function Banner(): React.ReactElement {
     height={1280}
     className="w-full h-full object-cover object-top rounded-[35px]" // <-- add rounded here!
   />
+</div> */}
+{/* RIGHT */}
+<div className="p-[25px]">
+  <div
+    className="relative w-full rounded-[35px] overflow-hidden
+               min-h-[420px] sm:min-h-[500px] md:min-h-[620px] lg:min-h-[700px]"
+  >
+    <Image
+      src="/assets/bannerImage.png"
+      alt="Tourism App Mockup"
+      fill
+      sizes="100vw"
+      style={{ objectFit: "cover", objectPosition: "top" }}
+    />
+  </div>
 </div>
+
 
         </div>
       </div>
