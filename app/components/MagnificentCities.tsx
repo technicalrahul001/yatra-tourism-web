@@ -3,6 +3,7 @@
 import { useRef, useEffect } from "react";
 import Image from "next/image";
 
+
 export default function MagnificentCities() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
 
@@ -33,10 +34,20 @@ export default function MagnificentCities() {
   }, []);
 
   const attractions = [
-    { name: "Amber Fort" },
-    { name: "Chokhi Dhani Cultural Villa..." },
-    { name: "Raw" },
-  ];
+  { 
+    name: "Amber Fort", 
+    image: "/assets/amer.jpg" 
+  },
+  { 
+    name: "Chokhi Dhani Cultural Village", 
+    image: "/assets/havaMahal.jpg" 
+  },
+  { 
+    name: "Rawat Misthan Bhandar", 
+    image: "/assets/havaMahal.jpg" 
+  },
+];
+
 
   return (
     <section className="py-8 sm:py-12 md:py-16 bg-[#F8EDEE]">
@@ -233,7 +244,7 @@ export default function MagnificentCities() {
             </div>
 
             {/* Image Gallery */}
-            <div>
+            {/* <div>
               <p className="text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3 font-sans">
                 Image Gallery
               </p>
@@ -260,7 +271,42 @@ export default function MagnificentCities() {
                   </div>
                 ))}
               </div>
-            </div>
+            </div> */}
+            {/* Image Gallery */}
+<div>
+  <p className="text-xs sm:text-sm font-semibold text-gray-700 mb-2 sm:mb-3 font-sans">
+    Image Gallery
+  </p>
+
+  <div
+    ref={scrollContainerRef}
+    className="flex gap-2 sm:gap-3 overflow-x-auto scrollbar-hover pb-2"
+  >
+    {attractions.map((attraction, index) => (
+      <div
+        key={index}
+        className="flex-shrink-0 w-24 sm:w-28 md:w-32 cursor-pointer"
+        onClick={() => handleClick(attraction.name)}
+      >
+        {/* Image Container */}
+        <div className="relative w-24 h-20 sm:w-28 sm:h-20 md:w-32 md:h-24 rounded-lg overflow-hidden mb-1.5 sm:mb-2">
+          <Image
+            src={attraction.image}        // dynamic image path
+            alt={attraction.name}
+            fill
+            className="object-cover"
+          />
+        </div>
+
+        {/* Name */}
+        <p className="text-[10px] sm:text-xs text-gray-600 truncate font-sans">
+          {attraction.name}
+        </p>
+      </div>
+    ))}
+  </div>
+</div>
+
           </div>
         </div>
       </div>
